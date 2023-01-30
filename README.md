@@ -54,4 +54,9 @@
 - Wishlist API for managing a user's wishlist.
 - Customer management API for managing customer information.
 - Marketing API for managing promotions, coupons, and other marketing activities.
-# e-comm
+
+## Terminal Commands
+
+- php artisan make:model Customer -mfc (makes a model, migration, factory and controller)
+
+- sail artisan migrate:fresh --seed
