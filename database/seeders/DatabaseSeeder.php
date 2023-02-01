@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\Customer::factory(100)->create();
         $this->call([
             CategorySeeder::class,
-            CouponSeeder::class
+            CouponSeeder::class,
+            ProductSeeder::class
         ]);
     }
 }
