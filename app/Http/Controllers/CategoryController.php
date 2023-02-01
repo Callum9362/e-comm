@@ -54,7 +54,6 @@ class CategoryController extends Controller
        $category->save();
 
        return response()->json([ 'msg' => "Category Updated!", 'data' => $category], 201);
-
    }
 
    public function delete($id)
@@ -62,7 +61,7 @@ class CategoryController extends Controller
        $category = Category::find($id);
 
        if (!$category) {
-           return response()->json(['error' => 'Customer not found'], 404);
+           return response()->json(['error' => 'Category not found'], 404);
        }
 
        $category->delete();

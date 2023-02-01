@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// TODO Refactor some of these route signatures
+
 // Customers
 Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
 Route::post('/customer', [CustomerController::class, 'store'])->name('add-customer');
@@ -32,3 +36,9 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::post('/category', [CategoryController::class, 'store'])->name('add-category');
 Route::post('/category/delete/{id}', [CategoryController::class, 'delete'])->name('delete-category');
 Route::put('/category/update/{id}', [CategoryController::class, 'update'])->name('update-category');
+
+// Coupons
+Route::get('/coupons', [CouponController::class, 'index'])->name('coupons');
+Route::post('/coupon', [CouponController::class, 'store'])->name('add-coupon');
+Route::post('/coupon/delete/{id}', [CouponController::class, 'delete'])->name('delete-coupon');
+Route::put('/coupon/update/{id}', [CouponController::class, 'update'])->name('update-coupon');
