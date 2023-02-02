@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+    public function wishlists()
+    {
+        return $this->belongsToMany(Wishlist::class);
+    }
+
 }

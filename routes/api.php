@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,6 @@ Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/product', [ProductController::class, 'store'])->name('add-product');
 Route::post('/product/delete/{id}', [ProductController::class, 'delete'])->name('delete-product');
 Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('update-product');
+
+// Wishlist
+Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name('wishlist');

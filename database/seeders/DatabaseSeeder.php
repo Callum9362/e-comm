@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
             CouponSeeder::class,
             ProductSeeder::class
         ]);
+        \App\Models\Wishlist::factory(1)->create();
     }
 }
