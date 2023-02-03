@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,3 +55,6 @@ Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('
 
 // Wishlist
 Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name('wishlist');
+
+// Review
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');

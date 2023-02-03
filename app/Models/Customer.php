@@ -14,4 +14,9 @@ class Customer extends Model
         return $this->belongsToMany(Wishlist::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }

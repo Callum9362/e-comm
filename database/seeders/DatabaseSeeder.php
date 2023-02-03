@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Category;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,7 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             CouponSeeder::class,
-            ProductSeeder::class
+            ProductSeeder::class,
+            ReviewSeeder::class
         ]);
         \App\Models\Wishlist::factory(1)->create();
     }
