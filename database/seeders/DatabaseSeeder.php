@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Address;
 use App\Models\Category;
 use App\Models\Review;
 use Illuminate\Database\Seeder;
@@ -22,7 +23,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             CouponSeeder::class,
             ProductSeeder::class,
-            ReviewSeeder::class
+            ReviewSeeder::class,
+            AddressSeeder::class
         ]);
         \App\Models\Wishlist::factory(1)->create();
     }
