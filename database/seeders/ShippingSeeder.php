@@ -20,8 +20,7 @@ class ShippingSeeder extends Seeder
                 'method' => 'post',
                 'status' => 'In progress',
                 'date' => Carbon::now(),
-                'address_id' => 1,
-                'order_id' => 1
+                'address_id' => 1
             ],
         ];
 
@@ -31,8 +30,7 @@ class ShippingSeeder extends Seeder
                 'method' => $shipping['method'],
                 'status' => $shipping['status'],
                 'date' => $shipping['date'],
-                'address_id' => $shipping['address_id'],
-                'order_id' => $shipping['order_id']
+                'address_id' => $shipping['address_id']
             ]);
         }
     }

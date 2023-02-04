@@ -21,8 +21,7 @@ class ShippingFactory extends Factory
             'method' => 'post',
             'status' => 'In progress',
             'date' => Carbon::now(),
-            'address_id' => 1,
-            'order_id' => 1
+            'address_id' => 1
         ];
     }
 }

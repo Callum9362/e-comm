@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('status');
             $table->date('date');
             $table->timestamps();
+            $table->unsignedBigInteger('address_id');
+
+            $table->foreign('address_id')
+                ->references('id')
+                ->on('addresses')
+                ->onDelete('cascade');
         });
     }
 

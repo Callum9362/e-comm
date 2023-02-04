@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
             CouponSeeder::class,
             ProductSeeder::class,
             ReviewSeeder::class,
-            AddressSeeder::class
+            AddressSeeder::class,
+            PaymentSeeder::class,
+            ShippingSeeder::class,
+            OrderSeeder::class
         ]);
         \App\Models\Wishlist::factory(1)->create();
     }

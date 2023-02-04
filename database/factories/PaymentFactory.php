@@ -17,7 +17,8 @@ class PaymentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'method' => 'Visa Debit',
+            'status' => 'Complete'
         ];
     }
 }

@@ -14,6 +14,19 @@ class PaymentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $payments = [
+            [
+                'method' => 'Visa Debit',
+                'status' => 'Complete'
+            ]
+        ];
+
+        foreach($payments as $payment)
+        {
+            \App\Models\Payment::factory(1)->create([
+                'method' => $payment['method'],
+                'status' => $payment['status']
+            ]);
+        }
     }
 }

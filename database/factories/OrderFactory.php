@@ -17,7 +17,10 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'order_number' => 1,
+            'customer_id' => 1,
+            'payment_id' => 1,
+            'shipping_id' => 1,
         ];
     }
 }
