@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,7 +50,6 @@ Route::post('/coupon', [CouponController::class, 'store'])->name('add-coupon');
 Route::post('/coupon/delete/{id}', [CouponController::class, 'delete'])->name('delete-coupon');
 Route::put('/coupon/update/{id}', [CouponController::class, 'update'])->name('update-coupon');
 
-
 // Product
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::post('/product', [ProductController::class, 'store'])->name('add-product');
@@ -58,3 +61,15 @@ Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name
 
 // Review
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
+
+// Addresses
+Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
+
+// Payments
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
+
+// Shippings
+Route::get('/shippings', [ShippingController::class, 'index'])->name('shippings');
+
+// Orders
+Route::get('/orders', [OrderController::class, 'index'])->name('orders');
