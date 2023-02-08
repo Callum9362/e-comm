@@ -43,7 +43,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         if(!$product) {
-            return response()->json(['error' => 'Coupon not found'], 404);
+            return response()->json(['error' => 'Product not found'], 404);
         }
 
         $validator = Validator::make($request->all(), [

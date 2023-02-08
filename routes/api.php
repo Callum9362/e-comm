@@ -62,6 +62,7 @@ Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name
 // Review
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
 Route::post('/review', [ReviewController::class, 'store'])->name('add-review');
+Route::put('/review/update/{id}', [ReviewController::class, 'update'])->name('update-review');
 
 // Addresses
 Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
