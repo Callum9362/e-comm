@@ -38,6 +38,17 @@ class ReviewController extends Controller
         return response()->json(['data' => $review], 201);
     }
 
+    public function edit($id)
+    {
+        $review = Review::find($id);
+
+        if(!$review)
+        {
+            return response()->json(['error' => 'Review not found'], 404);
+        }
+        return response()->json([ 'result' => 'ok', 'data' => $review], 201);
+    }
+
     public function update($id, Request $request)
     {
         $review = Review::find($id);

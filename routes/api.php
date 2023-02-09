@@ -37,7 +37,6 @@ Route::post('/customer', [CustomerController::class, 'store'])->name('add-custom
 Route::post('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('delete-customer');
 Route::put('/customer/update/{id}', [CustomerController::class, 'update'])->name('update-customer');
 
-
 // Categories
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::post('/category', [CategoryController::class, 'store'])->name('add-category');
@@ -61,6 +60,7 @@ Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name
 
 // Review
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
+Route::get('/review/{id}', [ReviewController::class, 'edit'])->name('view-review-by-id');
 Route::post('/review', [ReviewController::class, 'store'])->name('add-review');
 Route::put('/review/update/{id}', [ReviewController::class, 'update'])->name('update-review');
 
