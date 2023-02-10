@@ -79,4 +79,17 @@ class ReviewController extends Controller
 
         return response()->json([ 'msg' => "Review Updated!", 'data' => $review], 201);
     }
+
+    public function delete($id)
+    {
+        $review = Review::find($id);
+
+        if(!$review)
+        {
+            return response()->json(['error' => 'Review not found'], 404);
+        }
+
+        $review->delete();
+        return response()->json(['msg' => 'Review deleted successfully'], 201);
+    }
 }

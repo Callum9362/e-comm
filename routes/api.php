@@ -63,6 +63,7 @@ Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
 Route::get('/review/{id}', [ReviewController::class, 'edit'])->name('view-review-by-id');
 Route::post('/review', [ReviewController::class, 'store'])->name('add-review');
 Route::put('/review/update/{id}', [ReviewController::class, 'update'])->name('update-review');
+Route::post('/review/{id}', [ReviewController::class, 'delete'])->name('delete-review');
 
 // Addresses
 Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
