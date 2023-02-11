@@ -67,6 +67,10 @@ Route::post('/review/{id}', [ReviewController::class, 'delete'])->name('delete-r
 
 // Addresses
 Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
+Route::get('/address/{id}', [AddressController::class, 'edit'])->name('view-address-by-id');
+Route::post('/address', [AddressController::class, 'store'])->name('add-address');
+Route::put('/address/update/{id}', [AddressController::class, 'update'])->name('update-address');
+Route::post('/address/{id}', [AddressController::class, 'delete'])->name('delete-address');
 
 // Payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
