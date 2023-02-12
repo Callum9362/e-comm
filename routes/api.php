@@ -72,11 +72,15 @@ Route::post('/address', [AddressController::class, 'store'])->name('add-address'
 Route::put('/address/update/{id}', [AddressController::class, 'update'])->name('update-address');
 Route::post('/address/{id}', [AddressController::class, 'delete'])->name('delete-address');
 
-// Payments
-Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
-
 // Shippings
-Route::get('/shippings', [ShippingController::class, 'index'])->name('shippings');
+Route::get('/shippings', [ShippingController::class, 'index'])->name('get-all-shipping');
+Route::get('/shipping/{id}', [ShippingController::class, 'edit'])->name('view-shipping-by-id');
+Route::post('/shipping', [ShippingController::class, 'store'])->name('add-shipping');
+Route::put('/shipping/update/{id}', [ShippingController::class, 'update'])->name('update-shipping');
+Route::post('/shipping/{id}', [ShippingController::class, 'delete'])->name('delete-shipping');
 
 // Orders
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+
+// Payments
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
