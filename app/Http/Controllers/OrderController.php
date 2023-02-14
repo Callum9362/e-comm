@@ -11,4 +11,15 @@ class OrderController extends Controller
     {
         return Order::all();
     }
+
+    public function edit($id, Request $request)
+    {
+        $order = Order::find($id);
+        if(!$order)
+        {
+            return response()->json(['error', 'Order was not found'], 404);
+        }
+
+        return response()->json(['msg' => 'Order found!', 'data' => $order], 201);
+    }
 }

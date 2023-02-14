@@ -81,6 +81,10 @@ Route::post('/shipping/{id}', [ShippingController::class, 'delete'])->name('dele
 
 // Orders
 Route::get('/orders', [OrderController::class, 'index'])->name('orders');
+Route::get('/order/{id}', [OrderController::class, 'edit'])->name('view-order-by-id');
+Route::post('/order', [OrderController::class, 'store'])->name('add-order');
+Route::put('/order/update/{id}', [OrderController::class, 'update'])->name('update-order');
+Route::post('/order/{id}', [OrderController::class, 'delete'])->name('delete-order');
 
 // Payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
