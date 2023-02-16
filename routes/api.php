@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\AddressController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CouponController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\ShippingController;
-use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\API\AddressController;
+use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\CouponController;
+use App\Http\Controllers\API\CustomerController;
+use App\Http\Controllers\API\OrderController;
+use App\Http\Controllers\API\PaymentController;
+use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\ReviewController;
+use App\Http\Controllers\API\ShippingController;
+use App\Http\Controllers\API\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
