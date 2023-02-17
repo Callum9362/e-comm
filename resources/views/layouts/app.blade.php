@@ -19,9 +19,16 @@
             @include('layouts.navigation')
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+            <div class="flex">
+                <!-- Sidebar -->
+                @include('layouts.sidebar')
+
+                <!-- Main -->
+                <main class="flex-1">
+                    {{ $slot }}
+                </main>
+            </div>
+
         </div>
     </body>
     @livewireScripts
