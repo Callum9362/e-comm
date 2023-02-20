@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Customers
 Route::prefix('customer')->group(function () {
     Route::get('/all', [CustomerController::class, 'index'])->name('customers');
-    Route::post('/add', [CustomerController::class, 'store'])->name('add-customer');
+    Route::post('/add', [CustomerController::class, 'store'])->middleware('throttle:60,1')->name('add-customer');
     Route::post('/delete/{id}', [CustomerController::class, 'delete'])->name('delete-customer');
     Route::put('/update/{id}', [CustomerController::class, 'update'])->name('update-customer');
 });
@@ -97,7 +97,7 @@ Route::prefix('shipping')->group(function () {
 Route::prefix('order')->group(function () {
     Route::get('/all', [OrderController::class, 'index'])->name('orders');
     Route::get('/{id}', [OrderController::class, 'edit'])->name('view-order-by-id');
-    Route::post('/add', [OrderController::class, 'store'])->name('add-order');
+    Route::post('/add', [OrderController::class, 'store'])->middleware('throttle:60,1')->name('add-order');
     Route::put('/update/{id}', [OrderController::class, 'update'])->name('update-order');
     Route::post('/delete/{id}', [OrderController::class, 'delete'])->name('delete-order');
 });
