@@ -76,25 +76,34 @@ Route::prefix('reviews')->group(function () {
 });
 
 // Addresses
-Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
-Route::get('/address/{id}', [AddressController::class, 'edit'])->name('view-address-by-id');
-Route::post('/address', [AddressController::class, 'store'])->name('add-address');
-Route::put('/address/update/{id}', [AddressController::class, 'update'])->name('update-address');
-Route::post('/address/{id}', [AddressController::class, 'delete'])->name('delete-address');
+Route::prefix('address')->group(function () {
+    Route::get('/all', [AddressController::class, 'index'])->name('addresses');
+    Route::get('/{id}', [AddressController::class, 'edit'])->name('view-address-by-id');
+    Route::post('/add', [AddressController::class, 'store'])->name('add-address');
+    Route::put('/update/{id}', [AddressController::class, 'update'])->name('update-address');
+    Route::post('/delete/{id}', [AddressController::class, 'delete'])->name('delete-address');
+});
 
-// Shippings
-Route::get('/shippings', [ShippingController::class, 'index'])->name('get-all-shipping');
-Route::get('/shipping/{id}', [ShippingController::class, 'edit'])->name('view-shipping-by-id');
-Route::post('/shipping', [ShippingController::class, 'store'])->name('add-shipping');
-Route::put('/shipping/update/{id}', [ShippingController::class, 'update'])->name('update-shipping');
-Route::post('/shipping/{id}', [ShippingController::class, 'delete'])->name('delete-shipping');
+// Shipping
+Route::prefix('shipping')->group(function () {
+    Route::get('/all', [ShippingController::class, 'index'])->name('get-all-shipping');
+    Route::get('/{id}', [ShippingController::class, 'edit'])->name('view-shipping-by-id');
+    Route::post('/add', [ShippingController::class, 'store'])->name('add-shipping');
+    Route::put('/update/{id}', [ShippingController::class, 'update'])->name('update-shipping');
+    Route::post('/delete/{id}', [ShippingController::class, 'delete'])->name('delete-shipping');
+});
 
 // Orders
-Route::get('/orders', [OrderController::class, 'index'])->name('orders');
-Route::get('/order/{id}', [OrderController::class, 'edit'])->name('view-order-by-id');
-Route::post('/order', [OrderController::class, 'store'])->name('add-order');
-Route::put('/order/update/{id}', [OrderController::class, 'update'])->name('update-order');
-Route::post('/order/{id}', [OrderController::class, 'delete'])->name('delete-order');
+Route::prefix('order')->group(function () {
+    Route::get('/all', [OrderController::class, 'index'])->name('orders');
+    Route::get('/{id}', [OrderController::class, 'edit'])->name('view-order-by-id');
+    Route::post('/add', [OrderController::class, 'store'])->name('add-order');
+    Route::put('/update/{id}', [OrderController::class, 'update'])->name('update-order');
+    Route::post('/delete/{id}', [OrderController::class, 'delete'])->name('delete-order');
+});
 
 // Payments
-Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
+Route::prefix('payments')->group(function () {
+    Route::get('/all', [PaymentController::class, 'index'])->name('payments');
+});
+
