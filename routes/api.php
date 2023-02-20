@@ -28,42 +28,52 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-// TODO Refactor some of these route signatures
-
 // Customers
-Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
-Route::post('/customer', [CustomerController::class, 'store'])->name('add-customer');
-Route::post('/customer/delete/{id}', [CustomerController::class, 'delete'])->name('delete-customer');
-Route::put('/customer/update/{id}', [CustomerController::class, 'update'])->name('update-customer');
+Route::prefix('customer')->group(function () {
+    Route::get('/all', [CustomerController::class, 'index'])->name('customers');
+    Route::post('/add', [CustomerController::class, 'store'])->name('add-customer');
+    Route::post('/delete/{id}', [CustomerController::class, 'delete'])->name('delete-customer');
+    Route::put('/update/{id}', [CustomerController::class, 'update'])->name('update-customer');
+});
 
 // Categories
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
-Route::post('/category', [CategoryController::class, 'store'])->name('add-category');
-Route::post('/category/delete/{id}', [CategoryController::class, 'delete'])->name('delete-category');
-Route::put('/category/update/{id}', [CategoryController::class, 'update'])->name('update-category');
+Route::prefix('categories')->group(function () {
+    Route::get('/all', [CategoryController::class, 'index'])->name('categories');
+    Route::post('/add', [CategoryController::class, 'store'])->name('add-category');
+    Route::post('/delete/{id}', [CategoryController::class, 'delete'])->name('delete-category');
+    Route::put('/update/{id}', [CategoryController::class, 'update'])->name('update-category');
+});
+
 
 // Coupons
-Route::get('/coupons', [CouponController::class, 'index'])->name('coupons');
-Route::post('/coupon', [CouponController::class, 'store'])->name('add-coupon');
-Route::post('/coupon/delete/{id}', [CouponController::class, 'delete'])->name('delete-coupon');
-Route::put('/coupon/update/{id}', [CouponController::class, 'update'])->name('update-coupon');
+Route::prefix('coupons')->group(function () {
+    Route::get('/all', [CouponController::class, 'index'])->name('coupons');
+    Route::post('/add', [CouponController::class, 'store'])->name('add-coupon');
+    Route::post('/coupon/delete/{id}', [CouponController::class, 'delete'])->name('delete-coupon');
+    Route::put('/coupon/update/{id}', [CouponController::class, 'update'])->name('update-coupon');
+});
 
-// Product
-Route::get('/products', [ProductController::class, 'index'])->name('products');
-Route::post('/product', [ProductController::class, 'store'])->name('add-product');
-Route::post('/product/delete/{id}', [ProductController::class, 'delete'])->name('delete-product');
-Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('update-product');
+// Products
+Route::prefix('products')->group(function () {
+    Route::get('/all', [ProductController::class, 'index'])->name('products');
+    Route::post('/add', [ProductController::class, 'store'])->name('add-product');
+    Route::post('/delete/{id}', [ProductController::class, 'delete'])->name('delete-product');
+    Route::put('/update/{id}', [ProductController::class, 'update'])->name('update-product');
+});
 
 // Wishlist
-Route::get('/wishlist/{customerID}', [WishlistController::class, 'index'])->name('wishlist');
+Route::prefix('wishlist')->group(function () {
+    Route::get('/{customerID}', [WishlistController::class, 'index'])->name('wishlist');
+});
 
-// Review
-Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
-Route::get('/review/{id}', [ReviewController::class, 'edit'])->name('view-review-by-id');
-Route::post('/review', [ReviewController::class, 'store'])->name('add-review');
-Route::put('/review/update/{id}', [ReviewController::class, 'update'])->name('update-review');
-Route::post('/review/{id}', [ReviewController::class, 'delete'])->name('delete-review');
+// Reviews
+Route::prefix('reviews')->group(function () {
+    Route::get('/all', [ReviewController::class, 'index'])->name('reviews');
+    Route::get('/{id}', [ReviewController::class, 'edit'])->name('view-review-by-id');
+    Route::post('/add', [ReviewController::class, 'store'])->name('add-review');
+    Route::put('/update/{id}', [ReviewController::class, 'update'])->name('update-review');
+    Route::post('/delete/{id}', [ReviewController::class, 'delete'])->name('delete-review');
+});
 
 // Addresses
 Route::get('/addresses', [AddressController::class, 'index'])->name('addresses');
