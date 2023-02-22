@@ -105,5 +105,6 @@ Route::prefix('order')->group(function () {
 // Payments
 Route::prefix('payments')->group(function () {
     Route::get('/all', [PaymentController::class, 'index'])->name('payments');
+    Route::get('/{id}', [PaymentController::class, 'edit'])->name('payment-by-id');
 });
 

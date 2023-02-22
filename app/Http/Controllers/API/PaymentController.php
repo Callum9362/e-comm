@@ -11,4 +11,16 @@ class PaymentController extends Controller
     {
         return Payment::all();
     }
+
+    public function edit($id)
+    {
+        $payment = Payment::find($id);
+
+        if(!$payment)
+        {
+            return response()->json(['error' => 'Payment not found'], 404);
+        }
+
+        return response()->json(['message' => 'success', 'data' => $payment], 201);
+    }
 }
