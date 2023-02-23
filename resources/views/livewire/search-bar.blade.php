@@ -3,7 +3,7 @@
     @if (!empty($searchResults))
         <div class="absolute top-10 left-0 w-full bg-white rounded-lg shadow-lg z-50">
             @foreach ($searchResults as $result)
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition ease-in-out duration-150">{{ $result['order_number'] }}</a>
+                <a href="{{ route('order-details', ['id' => $result['id']]) }}" class="block px-4 py-2 hover:bg-gray-100 transition ease-in-out duration-150">{{ $result['order_number'] }}</a>
             @endforeach
         </div>
     @endif
