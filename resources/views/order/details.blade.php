@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <div class="w-1/2 bg-white rounded-lg shadow-lg px-6 py-4 mr-2">
+                    <div class="w-1/2 bg-white rounded-lg shadow-lg px-6 py-4">
                         <h2 class="text-lg font-medium mb-4 text-center">Address Information</h2>
                         <div class="flex flex-col gap-3">
                             <label class="text-gray-500">Street</label>

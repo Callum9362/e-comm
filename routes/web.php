@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Web\AllOrdersController;
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\ViewOrderController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('order')->group(function () {
+    Route::get('/all', [AllOrdersController::class, 'index'])->name('all-orders');
     Route::get('/{id}', [ViewOrderController::class, 'index'])->name('order-details');
 });
 
