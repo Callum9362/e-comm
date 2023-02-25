@@ -35,6 +35,36 @@
                     </div>
                 </div>
 
+                <div class="flex justify-between mt-3">
+                    <div class="w-1/2 bg-white rounded-lg shadow-lg px-6 py-4 mr-2">
+                        <h2 class="text-lg font-medium mb-4 text-center">Shipping</h2>
+                        <div class="flex flex-col gap-3">
+                            <label class="text-gray-500">Vendor</label>
+                            <input type="text" value="{{ $order->shipping->method }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">Status</label>
+                            <input type="text" value="{{ $order->shipping->status }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">Sent Out</label>
+                            <input type="text" value="{{ $order->shipping->date }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                        </div>
+                    </div>
+
+                    <div class="w-1/2 bg-white rounded-lg shadow-lg px-6 py-4 mr-2">
+                        <h2 class="text-lg font-medium mb-4 text-center">Address Information</h2>
+                        <div class="flex flex-col gap-3">
+                            <label class="text-gray-500">Street</label>
+                            <input type="text" value="{{ $order->shipping->address->street }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">City</label>
+                            <input type="text" value="{{ $order->shipping->address->city }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">State</label>
+                            <input type="text" value="{{ $order->shipping->address->state }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">ZIP</label>
+                            <input type="text" value="{{ $order->shipping->address->zip }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                            <label class="text-gray-500">Country</label>
+                            <input type="text" value="{{ $order->shipping->address->country }}" class="border bg-gray-100 border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex justify-between">
                     <p class="m-2 font-bold">Created At - Created on {{ $order->created_at->format('M d, Y \a\t g:i A') }}</p>
                     <p class="m-2 font-bold">Last Update {{ $order->updated_at->format('M d, Y \a\t g:i A') }}</p>
