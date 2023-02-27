@@ -33,4 +33,7 @@
         @endforelse
         </tbody>
     </table>
+    <div class="m-2">
+        {{ $orders->links() }}
+    </div>
 </x-app-layout>
