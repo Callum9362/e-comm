@@ -19,6 +19,7 @@ class ReviewSeeder extends Seeder
                'rating' => 4,
                'title' => 'A great product',
                'description' => 'This was my first purchase and I really enjoyed it',
+               'is_flagged' => 0,
                'customer_id' => 1,
                'product_id' => 1
            ]

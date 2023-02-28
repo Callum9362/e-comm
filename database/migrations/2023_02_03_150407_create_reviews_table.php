@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('rating');
             $table->string('title');
             $table->string('description');
+            $table->tinyInteger('is_flagged');
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('product_id');
             $table->timestamps();

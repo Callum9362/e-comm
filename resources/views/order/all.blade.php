@@ -28,7 +28,9 @@
             </tr>
         @empty
             <tr>
-                <span>There are no orders right now</span>
+                <td class="text-center" colspan="3">
+                    There are no orders right now
+                </td>
             </tr>
         @endforelse
         </tbody>

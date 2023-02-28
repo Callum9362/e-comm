@@ -11,7 +11,8 @@ class AllOrdersController extends Controller
 {
     public function index()
     {
-        $orders = Cache::remember('orders.all.' . Request::get('page', 1), 60, function () {
+        $orders = Cache::remember(
+            'orders.all.' . Request::get('page', 1), 60, function () {
             return Order::paginate(5);
         });
 

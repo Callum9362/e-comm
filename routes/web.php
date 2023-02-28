@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\AllOrdersController;
 use App\Http\Controllers\Web\DashboardController;
+use App\Http\Controllers\Web\FlaggedReviewsController;
 use App\Http\Controllers\Web\ViewOrderController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ Route::prefix('order')->group(function () {
     Route::get('/{id}', [ViewOrderController::class, 'index'])->name('order-details');
 });
 
+Route::prefix('reviews')->group(function () {
+    Route::get('/all', [FlaggedReviewsController::class, 'index'])->name('flagged');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
