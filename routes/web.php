@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('order')->group(function () {
+Route::prefix('order')->middleware('auth')->group(function () {
     Route::get('/all', [AllOrdersController::class, 'index'])->name('all-orders');
     Route::get('/{id}', [ViewOrderController::class, 'index'])->name('order-details');
 });
 
-Route::prefix('reviews')->group(function () {
+Route::prefix('reviews')->middleware('auth')->group(function () {
     Route::get('/all', [FlaggedReviewsController::class, 'index'])->name('flagged');
 });
 
