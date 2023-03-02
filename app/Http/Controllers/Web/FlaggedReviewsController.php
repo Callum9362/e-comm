@@ -11,12 +11,17 @@ class FlaggedReviewsController extends Controller
 {
     public function index()
     {
-        $reviews = Cache::remember(
-            'reviews.all.' . Request::get('page', 1), 60, function () {
-            return Review::where('is_flagged', 1)->paginate(5);
-        });
+        $reviews =  Review::where('is_flagged', 1)->paginate(5);
 
         return view('reviews.flagged')
             ->with('reviews', $reviews);
+    }
+
+    public function edit($id)
+    {
+        $review = Review::find($id);
+
+        return view('reviews.flagged-details')
+            ->with('review', $review);
     }
 }

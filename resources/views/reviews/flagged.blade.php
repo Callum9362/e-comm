@@ -17,7 +17,7 @@
         @forelse($reviews as $review)
             <tr>
                 <td class="px-6 py-4 whitespace-nowrap">
-                    {{ $review->title }}
+                    <a href="{{ route('flagged-details', ['id' => $review->id]) }}">{{ $review->title }}</a>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     {{ $review->created_at->format('M d, Y \a\t g:i A') }}

@@ -26,7 +26,8 @@ Route::prefix('order')->middleware('auth')->group(function () {
 });
 
 Route::prefix('reviews')->middleware('auth')->group(function () {
-    Route::get('/all', [FlaggedReviewsController::class, 'index'])->name('flagged');
+    Route::get('/flagged', [FlaggedReviewsController::class, 'index'])->name('flagged');
+    Route::get('/flagged/{id}', [FlaggedReviewsController::class, 'edit'])->name('flagged-details');
 });
 
 Route::middleware('auth')->group(function () {
