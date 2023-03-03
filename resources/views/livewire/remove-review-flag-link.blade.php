@@ -1,3 +1,3 @@
 <div>
-    <button wire:click="removeFlag()">Remove Flag</button>
+    <i wire:click="removeFlag()" class="fas fa-times-circle"></i>
 </div>

@@ -6,9 +6,15 @@
             />
         </div>
         <div class="font-medium text-lg mb-2">Review #{{ $review->id }}</div>
-        <div class="text-gray-600 text-sm">Created on {{ $review->created_at->format('M d, Y \a\t g:i A') }}</div>
-        <div class="text-gray-600 text-sm">Updated on {{ $review->updated_at->format('M d, Y \a\t g:i A') }}</div>
-        <div class="text-gray-600 text-sm m-2">{{ $review->title }}</div>
-        <div class="text-gray-600 text-sm m-2">{{ $review->description }}</div>
+        <div class="text-gray-600 text-sm">
+            <span>Created on {{ $review->created_at->format('M d, Y \a\t g:i A') }}</span>
+            <span class="float-right">Updated on {{ $review->updated_at->format('M d, Y \a\t g:i A') }}</span>
+        </div>
+        <div class="text-sm mt-2">
+         <span class="font-bold">Review Title:</span>   {{ $review->title }}
+        </div>
+        <div class="text-sm mt-2">
+            <span class="font-bold">Review Body:</span>  {{ $review->description }}
+        </div>
     </div>
 </x-app-layout>
