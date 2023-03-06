@@ -12,6 +12,10 @@ class ViewOrderController extends Controller
     {
         $order = Order::find($id);
 
+        if (!$order) {
+            abort(404);
+        }
+
         return view('order.details')
             ->with('order', $order);
     }
