@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="p-6 bg-white rounded-lg shadow-md m-2">
+    <div class="card">
         <div class="float-right">
             <livewire:remove-review-flag-link
                 :reviewID="$review->id"
