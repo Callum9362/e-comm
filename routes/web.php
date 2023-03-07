@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\AllOrdersController;
+use App\Http\Controllers\Web\CancelledOrdersController;
 use App\Http\Controllers\Web\CustomerDashboardController;
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\FlaggedReviewsController;
@@ -26,6 +27,8 @@ Route::prefix('order')->middleware('auth')->group(function () {
     Route::get('/{id}', [ViewOrderController::class, 'index'])->name('order-details');
 });
 
+Route::get('/cancelled', [CancelledOrdersController::class, 'index'])->name('cancelled');
+
 Route::prefix('reviews')->middleware('auth')->group(function () {
     Route::get('/flagged', [FlaggedReviewsController::class, 'index'])->name('flagged');
     Route::get('/flagged/{id}', [FlaggedReviewsController::class, 'edit'])->name('flagged-details');
@@ -35,7 +38,6 @@ Route::prefix('reviews')->middleware('auth')->group(function () {
 Route::prefix('customers')->middleware('auth')->group(function () {
     Route::get('/{id}', [CustomerDashboardController::class, 'index'])->name('customer-id');
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

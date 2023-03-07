@@ -22,6 +22,12 @@ class ShippingSeeder extends Seeder
                 'date' => Carbon::now(),
                 'address_id' => 1
             ],
+            [
+                'method' => 'post',
+                'status' => 'Delivered',
+                'date' => Carbon::now(),
+                'address_id' => 1
+            ],
         ];
 
         foreach($shippingOrders as $shipping)

@@ -22,6 +22,14 @@ class ReviewSeeder extends Seeder
                'is_flagged' => 0,
                'customer_id' => 1,
                'product_id' => 1
+           ],
+           [
+               'rating' => 4,
+               'title' => 'A swear word review',
+               'description' => 'There is swearing in this review',
+               'is_flagged' => 1,
+               'customer_id' => 1,
+               'product_id' => 1
            ]
        ];
 
@@ -30,6 +38,7 @@ class ReviewSeeder extends Seeder
            \App\Models\Review::factory(1)->create([
                'rating' => $review['rating'],
                'title' => $review['title'],
+               'is_flagged' => $review['is_flagged'],
                'description' => $review['description'],
                'customer_id' => $review['customer_id'],
                'product_id' => $review['product_id']

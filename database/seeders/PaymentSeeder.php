@@ -18,7 +18,11 @@ class PaymentSeeder extends Seeder
             [
                 'method' => 'Visa Debit',
                 'status' => 'Complete'
-            ]
+            ],
+            [
+                'method' => 'Visa Credit',
+                'status' => 'Complete'
+            ],
         ];
 
         foreach($payments as $payment)
