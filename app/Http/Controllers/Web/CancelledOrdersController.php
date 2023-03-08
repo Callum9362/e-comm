@@ -10,8 +10,6 @@ class CancelledOrdersController extends Controller
 {
     public function index()
     {
-        $orders = Order::where('order_status', 'cancelled')->paginate(5);
-        return view('order.cancelled')
-            ->with('orders', $orders);
+        return view('order.cancelled');
     }
 }
