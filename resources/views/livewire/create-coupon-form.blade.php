@@ -7,39 +7,47 @@
                     <label class="text-gray-500" >New Code</label>
                 </div>
                 <div>
-                    <input type="text" name="code" wire:model="code" value="{{ old('code') }}" class="@error('code') border-red-500 @enderror w-3/4 info-input">
+                    <input type="text" name="code" wire:model="code" value="{{ old('code') }}" class="@error('code') border-red-500 @enderror w-full form-input">
+                    @error('code') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div>
                     <label class="text-gray-500">Discount</label>
                 </div>
                 <div>
-                    <input type="text" name="discount" wire:model="discount" value="{{ old('discount') }}" class="@error('discount') border-red-500 @enderror w-3/4  info-input">
+                    <input type="text" name="discount" wire:model="discount" value="{{ old('discount') }}" class="@error('discount') border-red-500 @enderror w-full form-input">
+                    @error('discount') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div>
                     <label class="text-gray-500">Type <small>(fixed or percent)</small></label>
                 </div>
                 <div>
-                    <input type="text" name="type" wire:model="type" value="{{ old('type') }}" class="@error('type') border-red-500 @enderror w-3/4 info-input">
+                    <input type="text" name="type" wire:model="type" value="{{ old('type') }}" class="@error('type') border-red-500 @enderror w-full form-input">
+                    @error('type') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div>
-                    <label class="text-gray-500">Valid From:</label>
+                    <label class="text-gray-500">Valid From</label>
                 </div>
                 <div>
-                    <input type="text" name="from" wire:model="from" value="{{ old('from') }}" class="@error('from') border-red-500 @enderror w-3/4 info-input">
+                    <input type="text" name="from" wire:model="from" value="{{ old('from') }}" class="@error('from') border-red-500 @enderror w-full form-input">
+                    @error('from') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div>
-                    <label class="text-gray-500">Valid Until:</label>
+                    <label class="text-gray-500">Valid Until</label>
                 </div>
                 <div>
-                    <input type="text" name="to" wire:model="to" value="{{ old('to') }}" class="@error('to') border-red-500 @enderror w-3/4 info-input">
+                    <input type="text" name="to" wire:model="to" value="{{ old('to') }}" class="@error('to') border-red-500 @enderror w-full form-input">
+                    @error('to') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div>
-                    <label class="text-gray-500">Usage Limit:</label>
+                    <label class="text-gray-500">Usage Limit</label>
                 </div>
                 <div>
-                    <input type="text" name="limit" wire:model="limit" value="{{ old('limit') }}" class="@error('limit') border-red-500 @enderror w-3/4 info-input">
+                    <input type="text" name="limit" wire:model="limit" value="{{ old('limit') }}" class="@error('limit') border-red-500 @enderror w-full form-input">
+                    @error('limit') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
-                <button type="submit">Create</button>
+                <div class="mx-auto">
+                    <button class="submit-btn" type="submit">Create</button>
+                </div>
             </form>
         </div>
     </div>
