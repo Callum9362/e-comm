@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\AllOrdersController;
 use App\Http\Controllers\Web\CancelledOrdersController;
+use App\Http\Controllers\Web\CreateCouponController;
 use App\Http\Controllers\Web\CustomerDashboardController;
 use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\FlaggedReviewsController;
@@ -37,6 +38,10 @@ Route::prefix('reviews')->middleware('auth')->group(function () {
 
 Route::prefix('customers')->middleware('auth')->group(function () {
     Route::get('/{id}', [CustomerDashboardController::class, 'index'])->name('customer-id');
+});
+
+Route::prefix('coupons')->middleware('auth')->group(function () {
+    Route::get('/new', [CreateCouponController::class, 'index'])->name('create-coupon');
 });
 
 Route::middleware('auth')->group(function () {
