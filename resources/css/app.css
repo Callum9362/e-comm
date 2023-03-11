@@ -34,7 +34,13 @@
 
     /* Cards */
     .card {
-        @apply p-6 bg-white rounded-lg shadow-md m-2
+        @apply p-6 bg-white rounded-lg shadow-md m-2;
     }
+
+    /* Alerts */
+    .success-alert {
+        @apply bg-green-500 p-4 rounded-md text-white shadow-md mb-3 text-center;
+    }
+
 
 }
