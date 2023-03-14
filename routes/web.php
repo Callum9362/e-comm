@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\CancelledOrdersController;
 use App\Http\Controllers\Web\CreateCouponController;
 use App\Http\Controllers\Web\CustomerDashboardController;
 use App\Http\Controllers\Web\DashboardController;
+use App\Http\Controllers\Web\ExpiredCouponController;
 use App\Http\Controllers\Web\FlaggedReviewsController;
 use App\Http\Controllers\Web\ViewOrderController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,7 @@ Route::prefix('customers')->middleware('auth')->group(function () {
 
 Route::prefix('coupons')->middleware('auth')->group(function () {
     Route::get('/new', [CreateCouponController::class, 'index'])->name('create-coupon');
+    Route::get('/expired', [ExpiredCouponController::class, 'index'])->name('expired-coupons');
 });
 
 Route::middleware('auth')->group(function () {
