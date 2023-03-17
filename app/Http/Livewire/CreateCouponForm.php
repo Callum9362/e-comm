@@ -49,11 +49,11 @@ class CreateCouponForm extends Component
 
     public function refresh()
     {
-        $this->code = "";
-        $this->discount = "";
-        $this->type = "";
-        $this->from = "";
-        $this->to = "";
-        $this->limit = "";
+        $this->code = '';
+        $this->discount = '';
+        $this->type = '';
+        $this->from = '';
+        $this->to = '';
+        $this->limit = '';
     }
 }

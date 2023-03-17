@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Web\AllOrdersController;
 use App\Http\Controllers\Web\CancelledOrdersController;
+use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\CreateCouponController;
 use App\Http\Controllers\Web\CustomerDashboardController;
 use App\Http\Controllers\Web\DashboardController;
@@ -45,6 +46,8 @@ Route::prefix('coupons')->middleware('auth')->group(function () {
     Route::get('/new', [CreateCouponController::class, 'index'])->name('create-coupon');
     Route::get('/expired', [ExpiredCouponController::class, 'index'])->name('expired-coupons');
 });
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
