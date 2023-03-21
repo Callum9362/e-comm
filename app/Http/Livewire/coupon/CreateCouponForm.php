@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\coupon;
 
 use App\Models\Coupon;
 use Livewire\Component;

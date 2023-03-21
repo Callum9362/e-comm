@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\order;
 
 use App\Models\Order;
 use Livewire\Component;
