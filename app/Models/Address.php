@@ -13,4 +13,9 @@ class Address extends Model
     {
         return $this->hasMany(Shipping::class);
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

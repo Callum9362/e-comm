@@ -15,7 +15,6 @@ class CustomerDashboardController extends Controller
         if (!$customer) {
             abort(404);
         }
-
         return view('customers.info')
             ->with('customer', $customer);
     }

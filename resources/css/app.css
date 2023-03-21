@@ -39,7 +39,7 @@
 
     /* Alerts */
     .success-alert {
-        @apply bg-green-500 p-4 rounded-md text-white shadow-md mb-3 text-center;
+        @apply bg-green-200 p-4 rounded-md text-white shadow-md mb-3 text-center;
     }
 
 
