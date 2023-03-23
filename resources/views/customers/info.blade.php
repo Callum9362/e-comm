@@ -22,5 +22,17 @@
                 @endforelse
             </div>
         </div>
+        <div id="wishlist" class="mt-2">
+            <h1>Wishlist</h1>
+            <div class="text-gray-600 text-sm">
+                @forelse($wishlistItems as $item)
+                    <span>Product ID:</span> <span>{{ $item->id }}</span>
+                    <span>Name:</span> <span>{{ $item->name }}</span>
+                    <span>Price:</span> <span>{{ $item->price }}</span>
+                @empty
+                  <span>No wishlist items saved</span>
+                @endforelse
+            </div>
+        </div>
     </div>
 </x-app-layout>
