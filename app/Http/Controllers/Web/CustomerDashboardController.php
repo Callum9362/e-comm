@@ -14,7 +14,8 @@ class CustomerDashboardController extends Controller
     {
         $customer = Customer::find($id);
 
-        if (!$customer) {
+        if (!$customer)
+        {
             abort(404);
         }
 
