@@ -43,7 +43,7 @@
                     @error('message') <span class="text-red-500">{{ $message }}</span> @enderror
                 </div>
                 <div class="mx-auto">
-                    <button class="submit-btn" type="submit">Create</button>
+                    <button class="submit-btn" type="submit">Send</button>
                 </div>
             </form>
         </div>

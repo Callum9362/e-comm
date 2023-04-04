@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(10)->create();
+        \App\Models\User::factory()->create([
+            'name' => 'Callum Gill',
+            'email' => 'callum@test.com',
+        ]);
         \App\Models\Customer::factory(100)->create();
         $this->call([
             CategorySeeder::class,
