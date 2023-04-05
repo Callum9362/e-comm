@@ -25,6 +25,11 @@ class ContactForm extends Component
         return view('livewire.contact-form');
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function submitContact()
     {
         $this->validate();
