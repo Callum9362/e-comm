@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Web\AddressUpdaterController;
 use App\Http\Controllers\Web\AllOrdersController;
 use App\Http\Controllers\Web\CancelledOrdersController;
 use App\Http\Controllers\Web\ContactController;
@@ -46,6 +47,12 @@ Route::prefix('coupons')->middleware('auth')->group(function () {
     Route::get('/new', [CreateCouponController::class, 'index'])->name('create-coupon');
     Route::get('/expired', [ExpiredCouponController::class, 'index'])->name('expired-coupons');
 });
+
+
+Route::prefix('address')->middleware('auth')->group(function () {
+    Route::get('/update/{id}', [AddressUpdaterController::class, 'index'])->name('address.update');
+});
+
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 

@@ -50,7 +50,8 @@
                     </div>
 
                     <div class="w-1/2 bg-white rounded-lg shadow-lg px-6 py-4">
-                        <h2 class="text-lg font-medium mb-4 text-center">Address Information</h2>
+                        <a href="{{ route('address.update', ['id' => $order->shipping->address->id]) }}"><i class="fas fa-sign-in-alt float-right"></i></a>
+                        <h2 class="text-lg font-medium mb-4 text-center underline">Address Information</h2>
                         <div class="flex flex-col gap-3">
                             <label class="text-gray-500">Street</label>
                             <input type="text" value="{{ $order->shipping->address->street }}" class="info-input" readonly>
